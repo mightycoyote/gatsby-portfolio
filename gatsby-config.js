@@ -37,21 +37,19 @@ module.exports = {
       __key: "pages",
     },
     {
-      resolve: "gatsby-plugin-webfonts",
+      resolve: "gatsby-source-filesystem",
       options: {
-        fonts: {
-          google: [
-            {
-              family: "Montserrat",
-              variants: ["400", "700"],
-            },
-            {
-              family: "Instrument Sans",
-              variants: ["400", "600"], 
-            }
-          ]
-        }
+        name: `work`,
+        path: `${__dirname}/work`,
       }
     },
+    {
+      resolve: 'gatsby-plugin-web-font-loader',
+      options: {
+        google: {
+          families: ['Montserrat:400,700', 'Instrument Sans:400,600', 'Material Icons']
+        }
+      }
+    }
   ],
 };

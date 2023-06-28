@@ -1,6 +1,8 @@
 import * as React from "react";
 import { createGlobalStyle } from "styled-components";
 import styled from "styled-components";
+import { Link } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 
 // Josh's Custom CSS Reset
 // https://www.joshwcomeau.com/css/custom-css-reset/
@@ -50,9 +52,11 @@ const BaseStyles = styled.div`
   --secondary-2-3: rgba(107, 156, 32, 1);
   --secondary-2-4: rgba(76, 120, 7, 1);
 
+  --med-breakpoint: 40rem;
+
   font-family: "Montserrat", sans-serif;
   background-color: #0a0a0a;
-  color: var(--primary-0);
+  color: #ececec;
 
   h1,
   h2,
@@ -63,14 +67,72 @@ const BaseStyles = styled.div`
     font-family: "Instrument Sans", sans-serif;
     font-weight: 600;
   }
+
+  a {
+    color: var(--secondary-1-2);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--secondary-2-0);
+    }
+  }
+
+  .spaced-header {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: 400;
+
+    @media (min-width: 40rem) {
+      letter-spacing: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+  }
+
+  .small-caps {
+    font-size: 0.875rem; // 14px
+    text-transform: uppercase;
+  }
+
+  .more {
+    text-transform: uppercase;
+    margin-top: 1.2rem;
+  }
 `;
 
 const Wrapper = styled.div`
   margin: 0 auto;
+  padding: 1rem clamp(1rem, 6vw, 5rem);
   min-width: 275px;
   max-width: 1200px;
+  height: 100vh;
   display: grid;
   grid-template-rows: min-content auto min-content;
+`;
+
+const Header = styled.header`
+  display: flex;
+  font-family: "Instrument Sans", sans-serif;
+  justify-content: center;
+  text-transform: uppercase;
+  // flex-direction: column;
+  align-items: center;
+
+  // leaving placeholder for something to go on the left side
+  // p {
+  //     display: none;
+  // }
+
+  @media (min-width: 40rem) {
+    // flex-direction: row;
+    justify-content: flex-end;
+
+    // p {
+    //     display: block;
+    //     letter-spacing: 1px;
+    // }
+  }
 `;
 
 const Nav = styled.nav`
@@ -84,7 +146,11 @@ const Nav = styled.nav`
 
 const Footer = styled.footer`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: space-between;
+  @media (min-width: 25rem) {
+    flex-direction: row;
+  }
 `;
 
 const Layout = ({ children }) => {
@@ -93,22 +159,39 @@ const Layout = ({ children }) => {
       <GlobalStyle />
       <BaseStyles>
         <Wrapper>
-          <Nav>
-            <ul>
-              <li>
-                <a href="#about">About</a>
-              </li>
-              <li>
-                <a href="#work">Featured Work</a>
-              </li>
-              <li>
-                <a href="#contact">Contact</a>
-              </li>
-            </ul>
-          </Nav>
+          <Header>
+            <Nav>
+              <ul>
+                <li>
+                  <Link to="#about">About</Link>
+                </li>
+                <li>
+                  <Link to="#work">Featured Work</Link>
+                </li>
+                <li>
+                  <Link to="#contact">Contact</Link>
+                </li>
+              </ul>
+            </Nav>
+          </Header>
           <main> {children} </main>
           <Footer>
-            <p>©2023 Sarah Wilkes</p>
+            <div>
+              <p>©2023 Sarah Wilkes</p>
+            </div>
+            <div>
+              {/* <div>
+                <StaticImage
+                  src="./images/icon.png"
+                  alt="Gatsby.js logo"
+                  width={20}
+                  height={20}
+                />
+              </div> */}
+              <p>
+                Powered by <a href="https://www.gatsbyjs.com">Gatsby</a>.
+              </p>
+            </div>
           </Footer>
         </Wrapper>
       </BaseStyles>
