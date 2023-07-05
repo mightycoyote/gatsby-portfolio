@@ -37,8 +37,8 @@ const Featured = () => {
   return (
     <FeaturedStyles>
       <h2 className="med-header">Featured Work</h2>
-      {data.allMdx.nodes.map((node) => (
-        <FeaturedItem node={node} key={node.frontmatter.title} />
+      {data.allMdx.nodes.map((node, index) => (
+        <FeaturedItem node={node} key={node.frontmatter.title} index={index} />
       ))}
     </FeaturedStyles>
   );
