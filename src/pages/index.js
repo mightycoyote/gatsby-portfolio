@@ -3,6 +3,7 @@ import Layout from "../components/Layout";
 import { Seo } from "../components/seo";
 import styled from "styled-components";
 import { StaticImage } from "gatsby-plugin-image";
+import Featured from "../components/featured";
 
 const Hero = styled.div`
   display: flex;
@@ -14,14 +15,14 @@ const Hero = styled.div`
   .name {
     margin-top: clamp(1rem, 4vw, 2rem);
     margin-bottom: 1rem;
-    font-family: 'Instrument Sans', sans-serif;
+    font-family: "Instrument Sans", sans-serif;
     font-weight: 600;
     font-size: clamp(2rem, 6vw, 4rem);
     color: var(--secondary-1-3);
   }
 
   h1 {
-    color: var(--secondary-2-2)
+    color: var(--secondary-2-2);
   }
 
   .img-wrapper {
@@ -34,7 +35,7 @@ const Hero = styled.div`
   }
 `;
 
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
   return (
     <Layout>
       <Hero>
@@ -50,8 +51,7 @@ const IndexPage = () => {
           </p>
           <p className="more">
             <a href="about.html">
-              More{" "}
-              <span className="material-icons"> arrow_outward </span>
+              More <span className="material-icons"> arrow_outward </span>
             </a>
           </p>
         </div>
@@ -59,9 +59,12 @@ const IndexPage = () => {
           <StaticImage
             src="../images/Sarah_octocat.webp"
             alt="Github Octocat avatar, wearing t-shirt, jeans, glasses, and holding a baguette"
+            placeholder="blurred"
+            loading="eager"
           />
         </div>
       </Hero>
+      <Featured />
     </Layout>
   );
 };
@@ -69,3 +72,4 @@ const IndexPage = () => {
 export default IndexPage;
 
 export const Head = () => <Seo />;
+

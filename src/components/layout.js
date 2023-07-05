@@ -2,7 +2,6 @@ import * as React from "react";
 import { createGlobalStyle } from "styled-components";
 import styled from "styled-components";
 import { Link } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
 
 // Josh's Custom CSS Reset
 // https://www.joshwcomeau.com/css/custom-css-reset/
@@ -75,6 +74,11 @@ const BaseStyles = styled.div`
     &:hover {
       color: var(--secondary-2-0);
     }
+  }
+
+  .med-header {
+    font-size: 2rem;
+    font-weight: 400;
   }
 
   .spaced-header {
@@ -180,16 +184,8 @@ const Layout = ({ children }) => {
               <p>©2023 Sarah Wilkes</p>
             </div>
             <div>
-              {/* <div>
-                <StaticImage
-                  src="./images/icon.png"
-                  alt="Gatsby.js logo"
-                  width={20}
-                  height={20}
-                />
-              </div> */}
               <p>
-                Powered by <a href="https://www.gatsbyjs.com">Gatsby</a>.
+                Powered by <a href="https://www.gatsbyjs.com">GatsbyJS</a>.
               </p>
             </div>
           </Footer>
