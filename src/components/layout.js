@@ -52,12 +52,15 @@ const BaseStyles = styled.div`
   --secondary-2-3: rgba(107, 156, 32, 1);
   --secondary-2-4: rgba(76, 120, 7, 1);
 
+  // sadly, these don't work as variables
+  --sm-breakpoint: 25rem;
   --med-breakpoint: 40rem;
+  --med-breakpoint-2: 45rem;
 
   font-family: "Montserrat", sans-serif;
   background-color: #0a0a0a;
   color: #ececec;
-  height: 100vh;
+  overflow: visible;
 
   h1,
   h2,
@@ -89,7 +92,7 @@ const BaseStyles = styled.div`
     letter-spacing: 5px;
     font-weight: 400;
 
-    @media (min-width: 40rem) {
+    @media  {
       letter-spacing: 8px;
       font-weight: 600;
       font-size: 1rem;
@@ -153,8 +156,18 @@ const Footer = styled.footer`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 3rem 0 1rem;
   @media (min-width: 25rem) {
     flex-direction: row;
+  }
+  .right-div {
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+  }
+  .gatsby-logo {
+    width: 20px;
+    height: 20px;
   }
 `;
 
@@ -184,7 +197,21 @@ const Layout = ({ children }) => {
             <div>
               <p>©2023 Sarah Wilkes</p>
             </div>
-            <div>
+            <div className="right-div">
+              <div className="gatsby-logo">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 28 28"
+                  focusable="false"
+                >
+                  <title>Gatsby</title>
+                  <circle cx="14" cy="14" r="14" fill="#639" />
+                  <path
+                    fill="#fff"
+                    d="M6.2 21.8C4.1 19.7 3 16.9 3 14.2L13.9 25c-2.8-.1-5.6-1.1-7.7-3.2zm10.2 2.9L3.3 11.6C4.4 6.7 8.8 3 14 3c3.7 0 6.9 1.8 8.9 4.5l-1.5 1.3C19.7 6.5 17 5 14 5c-3.9 0-7.2 2.5-8.5 6L17 22.5c2.9-1 5.1-3.5 5.8-6.5H18v-2h7c0 5.2-3.7 9.6-8.6 10.7z"
+                  />
+                </svg>
+              </div>
               <p>
                 Powered by <a href="https://www.gatsbyjs.com">GatsbyJS</a>.
               </p>

@@ -4,6 +4,7 @@ import { Seo } from "../components/seo";
 import styled from "styled-components";
 import { StaticImage } from "gatsby-plugin-image";
 import Featured from "../components/featured";
+import Contact from "../components/contact";
 
 const Hero = styled.div`
   display: flex;
@@ -35,7 +36,7 @@ const Hero = styled.div`
   }
 `;
 
-const IndexPage = ({ data }) => {
+const IndexPage = () => {
   return (
     <Layout>
       <Hero>
@@ -65,6 +66,7 @@ const IndexPage = ({ data }) => {
         </div>
       </Hero>
       <Featured />
+      <Contact />
     </Layout>
   );
 };
