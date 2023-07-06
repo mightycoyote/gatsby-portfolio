@@ -16,6 +16,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+    overflow: auto;
   }
   img, picture, video, canvas, svg {
     display: block;
@@ -56,6 +57,7 @@ const BaseStyles = styled.div`
   font-family: "Montserrat", sans-serif;
   background-color: #0a0a0a;
   color: #ececec;
+  height: 100vh;
 
   h1,
   h2,
@@ -110,7 +112,6 @@ const Wrapper = styled.div`
   padding: 1rem clamp(1rem, 6vw, 5rem);
   min-width: 275px;
   max-width: 1200px;
-  height: 100vh;
   display: grid;
   grid-template-rows: min-content auto min-content;
 `;
