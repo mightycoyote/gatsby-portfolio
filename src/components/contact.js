@@ -1,11 +1,9 @@
 import * as React from "react";
 import styled from "styled-components";
+import { StaticImage } from "gatsby-plugin-image";
 
 const ContactStyles = styled.div`
-  h2 {
-    color: var(--secondary-2-2);
-    padding: 1rem 0;
-  }
+  padding: 2rem 0;
 `;
 
 const FlexDiv = styled.div`
@@ -38,15 +36,18 @@ const Address = styled.address`
   a {
     display: block;
   }
-  
+`;
+
+const ContactGrid = styled.div`
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 1rem;
 `;
 
 const Contact = () => {
   return (
     <ContactStyles>
-      <h2 id="contact" className="med-header">
-        Contact
-      </h2>
+      <h2 id="contact">Contact</h2>
       <FlexDiv>
         <Form>
           <p>Have a project or role in mind? Get in touch!</p>
@@ -63,11 +64,32 @@ const Contact = () => {
         <Address>
           <div>
             <h3>Find me on:</h3>
-            <div>
-              <a href="https://horrorhub.club/@mightycoyote" id="mastodon">Mastodon</a>
-              <a href="https://github.com/mightycoyote" id="github">GitHub</a>
-              <a href="https://www.frontendmentor.io/profile/mightycoyote" id="frontendmentor">FrontendMentor.io</a>
-            </div>
+            <ContactGrid>
+              <StaticImage
+                src="../images/logo-purple.svg"
+                alt="Mastodon logo"
+              />
+              <a href="https://horrorhub.club/@mightycoyote" id="mastodon">
+                Mastodon
+              </a>
+              <StaticImage
+                src="../images/github-mark-white.svg"
+                alt="GitHub logo"
+              />
+              <a href="https://github.com/mightycoyote" id="github">
+                GitHub
+              </a>
+              <StaticImage
+                src="../images/FrontendMentorLogo.png"
+                alt="FrontendMentor logo"
+              />
+              <a
+                href="https://www.frontendmentor.io/profile/mightycoyote"
+                id="frontendmentor"
+              >
+                FrontendMentor.io
+              </a>
+            </ContactGrid>
           </div>
         </Address>
       </FlexDiv>

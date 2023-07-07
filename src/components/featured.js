@@ -4,9 +4,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import FeaturedItem from "./featuredItem";
 
 const FeaturedStyles = styled.div`
-  h2 {
-    color: var(--secondary-2-2);
-  }
+  padding: 2rem 0;
 `;
 
 const Featured = () => {
@@ -36,7 +34,7 @@ const Featured = () => {
 
   return (
     <FeaturedStyles>
-      <h2 className="med-header" id="work">Featured Work</h2>
+      <h2 id="work">Featured Work</h2>
       {data.allMdx.nodes.map((node, index) => (
         <FeaturedItem node={node} key={node.frontmatter.title} index={index} />
       ))}

@@ -72,6 +72,17 @@ const BaseStyles = styled.div`
     font-weight: 600;
   }
 
+  h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--secondary-2-2);
+    padding: 1rem 0;
+  }
+
+  h3 {
+    padding-bottom: 1rem;
+  }
+
   a {
     color: var(--secondary-1-2);
     text-decoration: none;
@@ -79,11 +90,6 @@ const BaseStyles = styled.div`
     &:hover {
       color: var(--secondary-2-0);
     }
-  }
-
-  .med-header {
-    font-size: 2rem;
-    font-weight: 400;
   }
 
   .spaced-header {
