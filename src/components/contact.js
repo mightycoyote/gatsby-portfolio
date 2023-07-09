@@ -89,6 +89,17 @@ const Contact = () => {
               >
                 FrontendMentor.io
               </a>
+              <StaticImage 
+                src="../images/In-Blue-40@2x.png"
+                alt="LinkedIn logo"
+                backgroundColor="white"
+              />
+              <a
+                href="https://www.linkedin.com/in/sarah-wilkes-5560aaa8/"
+                id="linkedin"
+              >
+                LinkedIn
+              </a>
             </ContactGrid>
           </div>
         </Address>

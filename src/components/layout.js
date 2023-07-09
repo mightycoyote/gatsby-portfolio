@@ -195,6 +195,9 @@ const Layout = ({ children }) => {
                 <li>
                   <Link to="#contact">Contact</Link>
                 </li>
+                <li>
+                  <Link to="">Resume</Link>
+                </li>
               </ul>
             </Nav>
           </Header>
