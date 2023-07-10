@@ -16,10 +16,10 @@ const Hero = styled.div`
   .name {
     margin-top: clamp(1rem, 4vw, 2rem);
     margin-bottom: 1rem;
-    font-family: "Instrument Sans", sans-serif;
+    font-family: "Calistoga", serif;
     font-weight: 600;
     font-size: clamp(2rem, 6vw, 4rem);
-    color: var(--secondary-1-3);
+    color: var(--secondary-1-2);
   }
 
   h1 {

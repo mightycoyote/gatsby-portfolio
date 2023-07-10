@@ -37,17 +37,16 @@ const Form = styled.form`
   button {
     justify-self: left;
     text-transform: uppercase;
-    font-family: "Instrument Sans", sans-serif;
     font-size: 0.875rem;
     padding: 3px 5px;
     margin-top: 0.75rem;
-    background-color: var(--secondary-1-3);
+    background-color: var(--secondary-2-0);
     color: white;
     border: none;
     cursor: pointer;
     &:hover {
-      background-color: var(--secondary-2-0);
-      color: #0a0a0a;
+      background-color: var(--secondary-2-2);
+      // color: #0a0a0a;
     }
   }
 `;

@@ -34,23 +34,25 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const BaseStyles = styled.div`
-  --primary-0: rgba(201, 80, 64, 1);
-  --primary-1: rgba(255, 169, 158, 1);
-  --primary-2: rgba(235, 121, 106, 1);
-  --primary-3: rgba(170, 50, 35, 1);
-  --primary-4: rgba(131, 22, 7, 1);
+  // teal
+  --primary-0: rgba(42, 108, 124, 1);
+  --primary-1: rgba(112, 165, 177, 1);
+  --primary-2: rgba(68, 130, 145, 1);
+  --primary-3: rgba(24, 89, 105, 1);
+  --primary-4: rgba(7, 66, 81, 1);
+  // blue
+  --secondary-1-0: rgba(54, 72, 136, 1);
+  --secondary-1-1: rgba(126, 140, 190, 1);
+  --secondary-1-2: rgba(82, 99, 159, 1);
+  --secondary-1-3: rgba(34, 51, 115, 1);
+  --secondary-1-4: rgba(15, 31, 88, 1);
+  // green
+  --secondary-2-0: rgba(48, 150, 75, 1);
+  --secondary-2-1: rgba(126, 204, 146, 1);
+  --secondary-2-2: rgba(79, 175, 104, 1);
+  --secondary-2-3: rgba(26, 126, 52, 1);
+  --secondary-2-4: rgba(5, 97, 30, 1);
 
-  --secondary-1-0: rgba(42, 109, 124, 1);
-  --secondary-1-1: rgba(112, 165, 178, 1);
-  --secondary-1-2: rgba(68, 131, 145, 1);
-  --secondary-1-3: rgba(24, 90, 105, 1);
-  --secondary-1-4: rgba(7, 67, 81, 1);
-
-  --secondary-2-0: rgba(135, 185, 59, 1);
-  --secondary-2-1: rgba(203, 239, 148, 1);
-  --secondary-2-2: rgba(169, 216, 98, 1);
-  --secondary-2-3: rgba(107, 156, 32, 1);
-  --secondary-2-4: rgba(76, 120, 7, 1);
 
   // sadly, these don't work as variables
   --sm-breakpoint: 30rem;
@@ -69,28 +71,28 @@ const BaseStyles = styled.div`
   h4,
   h5,
   h6 {
-    font-family: "Instrument Sans", sans-serif;
     font-weight: 600;
   }
 
   h2 {
-    font-size: clamp(1.5rem, 3.5vw, 2rem);
-    font-weight: 400;
+    font-size: clamp(1.5rem, 4vw, 2rem);
     color: var(--secondary-2-2);
     padding: 1rem 0;
   }
 
   h3 {
     padding-bottom: 1rem;
+    font-family: "Calistoga", serif;
     font-size: clamp(1rem, 3vw, 1.5rem);
+    color: var(--secondary-1-2);
   }
 
   a {
-    color: var(--secondary-1-2);
+    color: var(--primary-1);
     text-decoration: none;
 
     &:hover {
-      color: var(--secondary-2-0);
+      color: var(--secondary-2-2);
     }
   }
 

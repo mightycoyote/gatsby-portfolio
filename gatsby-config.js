@@ -62,7 +62,7 @@ module.exports = {
       resolve: 'gatsby-plugin-web-font-loader',
       options: {
         google: {
-          families: ['Montserrat:400,700', 'Instrument Sans:400,600', 'Material Icons']
+          families: ['Montserrat:400,700', 'Calistoga:400', 'Material Icons']
         }
       }
     }
