@@ -16,7 +16,9 @@ const FeaturedItemStyles = styled.div`
       flex-grow: 2;
     }
     .image {
-      flex-basis: 25%;
+      flex-basis: 30%;
+      // min-width: 7rem;
+      flex-shrink: 0;
     }
   }
 `;

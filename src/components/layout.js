@@ -53,11 +53,12 @@ const BaseStyles = styled.div`
   --secondary-2-4: rgba(76, 120, 7, 1);
 
   // sadly, these don't work as variables
-  --sm-breakpoint: 25rem;
+  --sm-breakpoint: 30rem;
   --med-breakpoint: 40rem;
   --med-breakpoint-2: 45rem;
 
   font-family: "Montserrat", sans-serif;
+  font-size: clamp(0.875rem, 2.5vw, 1rem);
   background-color: #0a0a0a;
   color: #ececec;
   overflow: visible;
@@ -73,7 +74,7 @@ const BaseStyles = styled.div`
   }
 
   h2 {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
     font-weight: 400;
     color: var(--secondary-2-2);
     padding: 1rem 0;
@@ -81,6 +82,7 @@ const BaseStyles = styled.div`
 
   h3 {
     padding-bottom: 1rem;
+    font-size: clamp(1rem, 3vw, 1.5rem);
   }
 
   a {
@@ -163,7 +165,7 @@ const Footer = styled.footer`
   flex-direction: column;
   justify-content: space-between;
   padding: 3rem 0 1rem;
-  @media (min-width: 25rem) {
+  @media (min-width: 30rem) {
     flex-direction: row;
   }
   .right-div {
@@ -190,7 +192,7 @@ const Layout = ({ children }) => {
                   <Link to="#about">About</Link>
                 </li>
                 <li>
-                  <Link to="#work">Featured Work</Link>
+                  <Link to="#work">Work</Link>
                 </li>
                 <li>
                   <Link to="#contact">Contact</Link>

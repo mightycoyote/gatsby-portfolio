@@ -10,7 +10,7 @@ const FlexDiv = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  @media (min-width: 25rem) {
+  @media (min-width: 30rem) {
     flex-direction: row;
     > * {
       flex-basis: 100%;
@@ -19,11 +19,36 @@ const FlexDiv = styled.div`
 `;
 
 const Form = styled.form`
+  accent-color: var(--secondary-2-2);
   p {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
   div {
     display: grid;
+  }
+  label {
+    margin-top: 0.5rem;
+  }
+  button,
+  input,
+  textarea {
+    border-radius: 3px;
+  }
+  button {
+    justify-self: left;
+    text-transform: uppercase;
+    font-family: "Instrument Sans", sans-serif;
+    font-size: 0.875rem;
+    padding: 3px 5px;
+    margin-top: 0.75rem;
+    background-color: var(--secondary-1-3);
+    color: white;
+    border: none;
+    cursor: pointer;
+    &:hover {
+      background-color: var(--secondary-2-0);
+      color: #0a0a0a;
+    }
   }
 `;
 
@@ -42,6 +67,10 @@ const ContactGrid = styled.div`
   display: grid;
   grid-template-columns: 24px 1fr;
   gap: 1rem;
+
+  .bg-holder {
+    background: radial-gradient(#fff 75%, #0a0a0a);
+  }
 `;
 
 const Contact = () => {
@@ -57,7 +86,7 @@ const Contact = () => {
             <label htmlFor="email">Email</label>
             <input type="email" name="email" id="email" required />
             <label htmlFor="message">Message</label>
-            <textarea name="message" id="message" required />
+            <textarea name="message" id="message" rows="4" required />
             <button>Submit</button>
           </div>
         </Form>
@@ -89,11 +118,12 @@ const Contact = () => {
               >
                 FrontendMentor.io
               </a>
-              <StaticImage 
-                src="../images/In-Blue-40@2x.png"
-                alt="LinkedIn logo"
-                backgroundColor="white"
-              />
+              <div className="bg-holder">
+                <StaticImage
+                  src="../images/In-Blue-40@2x.png"
+                  alt="LinkedIn logo"
+                />
+              </div>
               <a
                 href="https://www.linkedin.com/in/sarah-wilkes-5560aaa8/"
                 id="linkedin"
