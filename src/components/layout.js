@@ -102,7 +102,7 @@ const BaseStyles = styled.div`
     letter-spacing: 6px;
     font-weight: 400;
 
-    @media  {
+    @media {
       letter-spacing: 9px;
       font-weight: 600;
       font-size: 1rem;
@@ -134,22 +134,12 @@ const Header = styled.header`
   font-family: "Montserrat", sans-serif;
   justify-content: center;
   text-transform: uppercase;
-  // flex-direction: column;
+  flex-direction: column;
   align-items: center;
 
-  // leaving placeholder for something to go on the left side
-  // p {
-  //     display: none;
-  // }
-
   @media (min-width: 40rem) {
-    // flex-direction: row;
-    justify-content: flex-end;
-
-    // p {
-    //     display: block;
-    //     letter-spacing: 1px;
-    // }
+    flex-direction: row;
+    justify-content: space-between;
   }
 `;
 
@@ -188,19 +178,17 @@ const Layout = ({ children }) => {
       <BaseStyles>
         <Wrapper>
           <Header>
+            <p><Link to="/">Portfolio</Link></p>
             <Nav>
               <ul>
                 <li>
-                  <Link to="#about">About</Link>
+                  <Link to="/#about">About</Link>
                 </li>
                 <li>
-                  <Link to="#work">Work</Link>
+                  <Link to="/#work">Work</Link>
                 </li>
                 <li>
-                  <Link to="#contact">Contact</Link>
-                </li>
-                <li>
-                  <Link to="">Resume</Link>
+                  <Link to="/#contact">Contact</Link>
                 </li>
               </ul>
             </Nav>

@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Link } from "gatsby";
 import Layout from "../components/layout";
 import { Seo } from "../components/seo";
 import styled from "styled-components";
@@ -51,9 +52,9 @@ const IndexPage = () => {
             intelligentsia whatever biodiesel chia.
           </p>
           <p className="more">
-            <a href="about.html">
+            <Link to ="/about">
               More <span className="material-icons"> arrow_outward </span>
-            </a>
+            </Link>
           </p>
         </div>
         <div className="img-wrapper">
