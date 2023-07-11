@@ -40,7 +40,7 @@ const FeaturedItem = ({ node, index }) => {
             <h3>{node.frontmatter.title}</h3>
             <p>{node.frontmatter.extract}</p>
             <p className="more">
-              <Link to={node.frontmatter.slug}>
+              <Link to={`/work/${node.frontmatter.slug}`}>
                 More <span className="material-icons"> arrow_outward </span>
               </Link>
             </p>
@@ -55,7 +55,7 @@ const FeaturedItem = ({ node, index }) => {
             <h3>{node.frontmatter.title}</h3>
             <p>{node.frontmatter.extract}</p>
             <p className="more">
-              <Link to={node.frontmatter.slug}>
+              <Link to={`/work/${node.frontmatter.slug}`}>
                 More <span className="material-icons"> arrow_outward </span>
               </Link>
             </p>

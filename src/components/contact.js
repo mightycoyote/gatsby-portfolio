@@ -35,18 +35,19 @@ const Form = styled.form`
     border-radius: 3px;
   }
   button {
+    font-weight: 600;
     justify-self: left;
     text-transform: uppercase;
     font-size: 0.875rem;
     padding: 3px 5px;
     margin-top: 0.75rem;
     background-color: var(--secondary-2-0);
-    color: white;
+    color: #0a0a0a;
     border: none;
     cursor: pointer;
     &:hover {
-      background-color: var(--secondary-2-2);
-      // color: #0a0a0a;
+      background-color: var(--primary-0);
+      color: white;
     }
   }
 `;

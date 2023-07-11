@@ -1,5 +1,5 @@
 import * as React from "react";
-import Layout from "../components/Layout";
+import Layout from "../components/layout";
 import { Seo } from "../components/seo";
 import styled from "styled-components";
 import { StaticImage } from "gatsby-plugin-image";
@@ -23,7 +23,7 @@ const Hero = styled.div`
   }
 
   h1 {
-    color: var(--secondary-2-2);
+    color: var(--secondary-1-1);
   }
 
   .img-wrapper {

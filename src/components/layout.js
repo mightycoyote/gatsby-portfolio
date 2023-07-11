@@ -71,7 +71,7 @@ const BaseStyles = styled.div`
   h4,
   h5,
   h6 {
-    font-weight: 600;
+    font-weight: 700;
   }
 
   h2 {
@@ -88,22 +88,22 @@ const BaseStyles = styled.div`
   }
 
   a {
-    color: var(--primary-1);
+    color: var(--secondary-2-2);
     text-decoration: none;
 
     &:hover {
-      color: var(--secondary-2-2);
+      color: var(--primary-0);
     }
   }
 
   .spaced-header {
     font-size: 0.875rem;
     text-transform: uppercase;
-    letter-spacing: 5px;
+    letter-spacing: 6px;
     font-weight: 400;
 
     @media  {
-      letter-spacing: 8px;
+      letter-spacing: 9px;
       font-weight: 600;
       font-size: 1rem;
     }
@@ -131,7 +131,7 @@ const Wrapper = styled.div`
 
 const Header = styled.header`
   display: flex;
-  font-family: "Instrument Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
   justify-content: center;
   text-transform: uppercase;
   // flex-direction: column;
