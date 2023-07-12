@@ -53,46 +53,47 @@ const BaseStyles = styled.div`
   --secondary-2-3: rgba(26, 126, 52, 1);
   --secondary-2-4: rgba(5, 97, 30, 1);
 
+  // design tokens etc
+  --green-text: var(--secondary-2-2);
+  --blue-text: var(--secondary-1-2);
+  --teal-text: var(--primary-0);
+  --display-font: "Calistoga", serif;
+  --bg-dark: #0a0a0a;
+  --text-light: #ececec;
 
-  // sadly, these don't work as variables
+
+  // breakpoints in use: sadly, these don't work as variables without SASS
   --sm-breakpoint: 30rem;
   --med-breakpoint: 40rem;
   --med-breakpoint-2: 45rem;
 
   font-family: "Montserrat", sans-serif;
   font-size: clamp(0.875rem, 2.5vw, 1rem);
-  background-color: #0a0a0a;
-  color: #ececec;
-  overflow: visible;
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-weight: 700;
-  }
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  overflow: visible; 
 
   h2 {
     font-size: clamp(1.5rem, 4vw, 2rem);
-    color: var(--secondary-2-2);
+    color: var(--green-text);
     padding: 1rem 0;
+    font-weight: 400;
   }
 
   h3 {
     padding-bottom: 1rem;
-    font-family: "Calistoga", serif;
+    font-family: var(--display-font);
     font-size: clamp(1rem, 3vw, 1.5rem);
-    color: var(--secondary-1-2);
+    color: var(--blue-text);
+    font-weight: 400;
   }
 
   a {
-    color: var(--secondary-2-2);
+    color: var(--green-text);
     text-decoration: none;
 
     &:hover {
-      color: var(--primary-0);
+      color: var(--teal-text);
     }
   }
 
@@ -131,7 +132,6 @@ const Wrapper = styled.div`
 
 const Header = styled.header`
   display: flex;
-  font-family: "Montserrat", sans-serif;
   justify-content: center;
   text-transform: uppercase;
   flex-direction: column;
@@ -178,7 +178,7 @@ const Layout = ({ children }) => {
       <BaseStyles>
         <Wrapper>
           <Header>
-            <p><Link to="/">Portfolio</Link></p>
+            <p><Link to="/">Home</Link></p>
             <Nav>
               <ul>
                 <li>

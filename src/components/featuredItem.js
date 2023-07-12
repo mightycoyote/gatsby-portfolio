@@ -17,7 +17,6 @@ const FeaturedItemStyles = styled.div`
     }
     .image {
       flex-basis: 30%;
-      // min-width: 7rem;
       flex-shrink: 0;
     }
   }

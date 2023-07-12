@@ -19,7 +19,7 @@ const FlexDiv = styled.div`
 `;
 
 const Form = styled.form`
-  accent-color: var(--secondary-2-2);
+  accent-color: var(--green-text);
   p {
     margin-bottom: 0.5rem;
   }
@@ -28,11 +28,17 @@ const Form = styled.form`
   }
   label {
     margin-top: 0.5rem;
+    color: var(--secondary-1-1);
   }
   button,
   input,
   textarea {
     border-radius: 3px;
+  }
+  input,
+  textarea {
+    background-color: var(--text-light);
+    color: var(--bg-dark);
   }
   button {
     font-weight: 600;
@@ -42,12 +48,12 @@ const Form = styled.form`
     padding: 3px 5px;
     margin-top: 0.75rem;
     background-color: var(--secondary-2-0);
-    color: #0a0a0a;
+    color: var(--bg-dark);
     border: none;
     cursor: pointer;
     &:hover {
-      background-color: var(--primary-0);
-      color: white;
+      background-color: var(--teal-text);
+      color: var(--text-light);
     }
   }
 `;

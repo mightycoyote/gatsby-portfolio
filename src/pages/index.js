@@ -18,9 +18,9 @@ const Hero = styled.div`
     margin-top: clamp(1rem, 4vw, 2rem);
     margin-bottom: 1rem;
     font-family: "Calistoga", serif;
-    font-weight: 600;
+    font-weight: 400;
     font-size: clamp(2rem, 6vw, 4rem);
-    color: var(--secondary-1-2);
+    color: var(--blue-text);
   }
 
   h1 {
