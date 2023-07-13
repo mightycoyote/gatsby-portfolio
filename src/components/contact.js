@@ -51,7 +51,7 @@ const Form = styled.form`
     color: var(--bg-dark);
     border: none;
     cursor: pointer;
-    &:hover {
+    &:hover, &:focus {
       background-color: var(--teal-text);
       color: var(--text-light);
     }

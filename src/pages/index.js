@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Link } from "gatsby";
-import Layout from "../components/layout";
+import Layout from "../components/Layout";
 import { Seo } from "../components/seo";
 import styled from "styled-components";
 import { StaticImage } from "gatsby-plugin-image";

@@ -16,7 +16,19 @@ module.exports = {
         icon: "src/images/icon.png",
       },
     },
-    "gatsby-plugin-mdx",
+    {
+      resolve: "gatsby-plugin-mdx",
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              maxWidth: 400,
+            }
+          }
+        ]
+      }
+    },
     "gatsby-plugin-styled-components",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
@@ -42,7 +54,7 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images/`,
-      }
+      },
     },
     {
       resolve: `gatsby-source-filesystem`,
@@ -56,15 +68,19 @@ module.exports = {
       options: {
         name: `work`,
         path: `${__dirname}/work/`,
-      }
+      },
     },
     {
-      resolve: 'gatsby-plugin-web-font-loader',
+      resolve: "gatsby-plugin-web-font-loader",
       options: {
         google: {
-          families: ['Montserrat:400,600,700', 'Calistoga:400', 'Material Icons']
-        }
-      }
-    }
+          families: [
+            "Montserrat:400,600,700",
+            "Calistoga:400",
+            "Material Icons",
+          ],
+        },
+      },
+    },
   ],
 };
