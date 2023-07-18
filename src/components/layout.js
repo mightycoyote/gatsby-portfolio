@@ -83,7 +83,7 @@ const BaseStyles = styled.div`
   h3 {
     padding-bottom: 1rem;
     font-family: var(--display-font);
-    font-size: clamp(1rem, 3vw, 1.5rem);
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
     color: var(--blue-text);
     font-weight: 400;
   }

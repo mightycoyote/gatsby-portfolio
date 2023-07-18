@@ -16,7 +16,7 @@ const Featured = () => {
       ) {
         nodes {
           frontmatter {
-            extract
+            abstract
             featured
             slug
             title

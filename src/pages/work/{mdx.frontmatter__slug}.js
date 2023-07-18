@@ -9,15 +9,20 @@ const StyledImage = styled(GatsbyImage)`
   width: 100%;
 
   @media (min-width: 30rem) {
-    width: 40%;
+    width: 50%;
   }
 `;
 
 const TopSectionStyles = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
   margin: 2rem 0;
+
+  .span {
+    text-transform: uppercase;
+    color: var(--secondary-1-1);
+  }
 
   @media (min-width: 30rem) {
     flex-direction: row;
@@ -46,7 +51,8 @@ const ProjectDetail = ({ data, children }) => {
         <h1>{data.mdx.frontmatter.title}</h1>
         <TopSectionStyles>
           <div>
-            <p>{data.mdx.frontmatter.extract}</p>
+            <p><span className="span">Abstract:</span><br />{data.mdx.frontmatter.abstract}</p>
+            <p><span className="span">Built with:</span><br /> {data.mdx.frontmatter.built_with}</p>
             <p>
               <a
                 className="more"
@@ -77,7 +83,8 @@ export const query = graphql`
         image_alt
         title
         liveURL
-        extract
+        abstract
+        built_with
       }
     }
   }

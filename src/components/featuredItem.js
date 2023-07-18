@@ -37,7 +37,7 @@ const FeaturedItem = ({ node, index }) => {
         <FeaturedItemStyles>
           <div className="info">
             <h3>{node.frontmatter.title}</h3>
-            <p>{node.frontmatter.extract}</p>
+            <p>{node.frontmatter.abstract}</p>
             <p className="more">
               <Link to={`/work/${node.frontmatter.slug}`}>
                 More <span className="material-icons"> arrow_outward </span>
@@ -52,7 +52,7 @@ const FeaturedItem = ({ node, index }) => {
         <ReversedCard>
           <div className="info">
             <h3>{node.frontmatter.title}</h3>
-            <p>{node.frontmatter.extract}</p>
+            <p>{node.frontmatter.abstract}</p>
             <p className="more">
               <Link to={`/work/${node.frontmatter.slug}`}>
                 More <span className="material-icons"> arrow_outward </span>
