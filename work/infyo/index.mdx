@@ -11,11 +11,91 @@ image_alt: "Screen grab of my yoyo page"
 ---
 ## Intro
 
-This was the first project I built after completing a basic frontend web developer curriculum online. I was keen to build an original site of my own, as well as try out Tailwind and a JavaScript framework. There are a lot of things I'd do differently now, but the site still works: it's accessible and fully responsive.
+This was the first project I built after completing a basic frontend web developer curriculum online. I was keen to build an original site of my own, as well as try out Tailwind and a JavaScript framework. There are things I'd do differently now, but the site still works.
 
 ## React
 
-I'd done a React basics course, and had the official documentation close to hand, but didn't understand it nearly as well as I do now (I recommend [Josh Comeau's "The Joy of React"](https://www.joyofreact.com/).) Overkill for such a simple site? Maybe. On the other hand, at the time at least, the tooling for `create-react-app` worked pretty well and I was able to find effective answers to questions like how to get Tailwind installed and how to build and deploy to Github Pages. Since then, I've built several one-off practice projects (mostly through [FrontendMentor](https://www.frontendmentor.io/profile/mightycoyote)) using what should have been simpler tools, but sometimes had a lot of problems configuring them from outdated, patchy, or nonexistent documentation.
+I'd done a React basics course, and had the official documentation close to hand, but didn't understand it nearly as well as I do now (I recommend [Josh Comeau's "The Joy of React"](https://www.joyofreact.com/)). Overkill for such a simple site? Maybe. On the other hand, at the time at least, the tooling for `create-react-app` worked pretty well and I was able to find answers to questions like how to get Tailwind installed and how to build and deploy to Github Pages. Since then, I've built several one-off practice projects using what should have been simpler tools, but sometimes had problems configuring them from outdated, patchy, or nonexistent documentation.
 
 Also, I'm not really sorry I dipped my toes in React that early.
 
+One of the main things I'd do differently here is that I'd break up the `index.js` page one way or another, even if I kept the public site itself to one page. Currently it's mostly all in one giant document, aside from the few obviously reusable components like the navigation and image layouts. This is partly an artifact of writing and designing the site at the same time--crafting styles to suit each content section I had and then looking for ways to reuse them later--while not realizing how long and unwieldy it was going to get. The simplest solution would be to keep it as-is but split it into separate `js` files for each content section, just to make it easier to manage. If I were building it new _today_, I would probably write the content in a series of `mdx` files. But, that's the difference between just-finished-my-fewd-courses me and current me.
+
+There are a few characteristically React components here, though. For example, there was one section where I wanted the aside box to `float` right at larger screen sizes (so that the main content would wrap around it), but stop floating and go to the end of the section at smaller screen sizes. To accomplish this, the aside box is shown in one position and hidden in another, depending on the screen size. 
+
+```jsx
+import Img from './img';
+
+function AsideFloat( {id, title, content, pointContent, src, alt, caption, floated} ) {
+    const classes = `box ${floated === "true" ? 'box-float' : 'box-last'}`;
+    return (
+        <aside id={id} className={classes}>
+            <span className="boxhead">{title}</span>
+            <p>{content}</p>
+            {pointContent && <p className="point">{pointContent}</p>}
+            {src &&
+                <Img 
+                    src={src}
+                    alt={alt}
+                    caption={caption}
+                />
+            }
+        </aside>
+    );
+}
+export default AsideFloat;
+```
+
+Then there's CSS that does this:
+
+```CSS
+    @media (max-width: 1023px) {
+        .box-float {
+            display: none;
+        }
+    }
+    @media (min-width: 1024px) {
+        .box-float {
+            @apply float-right ml-8 mb-4 w-1/3;
+        }
+        .box-last {
+            display: none;
+        }
+    }
+```
+
+## Darkmode
+
+My original design was the light version; I did a bunch of reading about how to go about selecting colors for the dark version as well as the technical side of how to actually implement it. Tailwind has its own built-in system for managing the styles, which by default follows only the user's system preference (`prefers-color-scheme`), but can be configured to work by adding or removing a class.
+
+In Tailwind, specifying the light and dark versions of an element ends up looking like this:
+
+```CSS
+    h2, h3, h4, h5 {
+        @apply text-secondarytwo-light dark:text-secondarytwo pt-6 pb-2;
+    }
+```
+One benefit of using React is that I felt (however briefly) like a Real Developer when I got it to let a user toggle darkmode manually AND check for a previously saved preference on load AND check the system preference if there wasn't one:
+
+```jsx
+function App() {
+  const localPref = JSON.parse(localStorage.getItem('darkMode')); // boolean or null
+  const defaultDark = window.matchMedia('(prefers-color-scheme: dark)').matches; // boolean
+  const userPref = localPref ?? defaultDark;
+  const [darkMode, setDarkMode] = useState(userPref); // will turn on darkMode if evaluated to true
+  
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add("dark");
+      localStorage.setItem('darkMode', true);
+    } else {
+      document.body.classList.remove("dark");
+      localStorage.setItem('darkMode', false);
+    }
+  }, [darkMode]);
+
+  return (etc...)
+}
+```
+
+## CSS and Tailwind

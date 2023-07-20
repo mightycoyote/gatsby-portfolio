@@ -85,7 +85,7 @@ const Contact = () => {
       <h2 id="contact">Contact</h2>
       <FlexDiv>
         <Form>
-          <p>Have a project or role in mind? Get in touch!</p>
+          <p>Have a project in mind? Still don't understand the difference between 6061 and 7075 aluminum in a yoyo? Need to hear all about my cats? Get in touch!</p>
           <div>
             <label htmlFor="name">Name</label>
             <input type="text" name="name" id="name" required />
