@@ -51,13 +51,17 @@ const ProjectDetail = ({ data, children }) => {
         <h1>{data.mdx.frontmatter.title}</h1>
         <TopSectionStyles>
           <div>
-            <p><span className="span">Abstract:</span><br />{data.mdx.frontmatter.abstract}</p>
-            <p><span className="span">Built with:</span><br /> {data.mdx.frontmatter.built_with}</p>
             <p>
-              <a
-                className="more"
-                href={data.mdx.frontmatter.liveURL}
-              >
+              <span className="span">Abstract:</span>
+              <br />
+              {data.mdx.frontmatter.abstract}
+            </p>
+            <p>
+              <span className="span">Built with:</span>
+              <br /> {data.mdx.frontmatter.built_with}
+            </p>
+            <p>
+              <a className="more" href={data.mdx.frontmatter.liveURL}>
                 visit live site{" "}
                 <span className="material-icons"> arrow_outward </span>
               </a>

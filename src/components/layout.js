@@ -71,12 +71,12 @@ const BaseStyles = styled.div`
   font-size: clamp(0.875rem, 2.5vw, 1rem);
   background-color: var(--bg-dark);
   color: var(--text-light);
-  overflow: visible; 
+  overflow: auto; 
 
   h2 {
     font-size: clamp(1.5rem, 4vw, 2rem);
     color: var(--green-text);
-    padding: 1rem 0;
+    margin: 2rem 0 1.5rem;
     font-weight: 400;
   }
 
@@ -128,6 +128,11 @@ const Wrapper = styled.div`
   max-width: 1200px;
   display: grid;
   grid-template-rows: min-content auto min-content;
+  height: 100vh;
+
+  main {
+    min-width: 0;
+  }
 `;
 
 const Header = styled.header`

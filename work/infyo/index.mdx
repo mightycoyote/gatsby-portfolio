@@ -15,7 +15,7 @@ This was the first project I built after completing a basic frontend web develop
 
 ## React
 
-I'd done a React basics course, and had the official documentation close to hand, but didn't understand it nearly as well as I do now (I recommend [Josh Comeau's "The Joy of React"](https://www.joyofreact.com/)). Overkill for such a simple site? Maybe. On the other hand, at the time at least, the tooling for `create-react-app` worked pretty well and I was able to find answers to questions like how to get Tailwind installed and how to build and deploy to Github Pages. Since then, I've built several one-off practice projects using what should have been simpler tools, but sometimes had problems configuring them from outdated, patchy, or nonexistent documentation.
+I'd done a React basics course, and had the official documentation close to hand, but didn't understand it nearly as well as I do now (I'm working my way through [Josh Comeau's "The Joy of React"](https://www.joyofreact.com/), and I _highly_ recommend it). Overkill for such a simple site? Maybe. On the other hand, at the time at least, the tooling for `create-react-app` worked pretty well and I was able to find answers to questions like how to get Tailwind installed and how to build and deploy to Github Pages. Since then, I've built several one-off practice projects using what should have been simpler tools, but sometimes had problems configuring them from outdated, patchy, or nonexistent documentation.
 
 Also, I'm not really sorry I dipped my toes in React that early.
 
@@ -30,16 +30,7 @@ function AsideFloat( {id, title, content, pointContent, src, alt, caption, float
     const classes = `box ${floated === "true" ? 'box-float' : 'box-last'}`;
     return (
         <aside id={id} className={classes}>
-            <span className="boxhead">{title}</span>
-            <p>{content}</p>
-            {pointContent && <p className="point">{pointContent}</p>}
-            {src &&
-                <Img 
-                    src={src}
-                    alt={alt}
-                    caption={caption}
-                />
-            }
+            {/* etc... */}
         </aside>
     );
 }
@@ -66,7 +57,7 @@ Then there's CSS that does this:
 
 ## Darkmode
 
-My original design was the light version; I did a bunch of reading about how to go about selecting colors for the dark version as well as the technical side of how to actually implement it. Tailwind has its own built-in system for managing the styles, which by default follows only the user's system preference (`prefers-color-scheme`), but can be configured to work by adding or removing a class.
+My original design was the light version; then I did a bunch of reading about how to go about selecting colors for the dark version, as well as the technical side of how to actually implement it. Tailwind has its own built-in system for managing a dark theme, which by default follows only the user's system preference (`prefers-color-scheme`), but can be configured to work by explcitly adding and removing a class instead.
 
 In Tailwind, specifying the light and dark versions of an element ends up looking like this:
 
@@ -75,7 +66,7 @@ In Tailwind, specifying the light and dark versions of an element ends up lookin
         @apply text-secondarytwo-light dark:text-secondarytwo pt-6 pb-2;
     }
 ```
-One benefit of using React is that I felt (however briefly) like a Real Developer when I got it to let a user toggle darkmode manually AND check for a previously saved preference on load AND check the system preference if there wasn't one:
+One benefit of using React is that I felt (however briefly) like a Real Developer when I got it to let a user toggle darkmode manually, AND check for a previously saved preference on load, AND check the system preference if there wasn't one:
 
 ```jsx
 function App() {
@@ -98,4 +89,61 @@ function App() {
 }
 ```
 
-## CSS and Tailwind
+## Tailwind and CSS
+
+I enjoyed learning and using Tailwind for this project... but I've never used it again. Styling a page does go pretty quickly once you've filled your head with all of the Tailwind class names, but I don't find writing more conventional CSS with Sass, or at least the native custom properties, that burdensome. And all things being equal, I have enough terms for things to memorize already. 
+
+An interesting CSS problem I had on INFyO was creating the optional "point" styles:
+
+![Screenshot of component indented with a rightward-pointing arrow appearing before the written content](./point-screenshot.png)
+
+Of course, the arrow is added with a pseudo-element when the paragraph contains the class name "point."
+
+```jsx
+<p className="point">What I <em>don't</em> recommend is trying to learn the basics on a responsive aluminum yoyo. Some people do, but... ouch.</p>
+```
+It needed a lot of miscellaneous CSS styling to get it to display the way I wanted. I also decided the arrow should simply disappear on mobile, where there isn't much room for it.
+
+```CSS
+    @media (min-width: 768px) {
+        .point::before {
+            content: "\2192";
+            @apply text-secondaryone-dark dark:text-secondaryone-pale font-bold pr-2 text-2xl -ml-8 relative pl-8;
+        }
+    }
+    /* 
+    translation:
+        .point::before {
+            font-weight: 700;
+            padding-right: .5rem;
+            font-size: 1.5rem;
+            margin-left: -2rem;
+            position: relative;
+            padding-left: 2rem;   
+        }
+    */
+```
+
+The "aside" React components can also _optionally_ include a paragraph with the "point" style and/or an image, so they use the `&&` operator syntax to see if these have been provided before attempting to render them:
+
+```jsx
+import Img from './img';
+
+function Aside( {id, title, content, pointContent, src, alt, caption} ) {
+    return (
+        <aside id={id} className="box">
+            <span className="boxhead">{title}</span>
+            <p>{content}</p>
+            {pointContent && <p className="point">{pointContent}</p>}
+            {src &&
+                <Img 
+                    src={src}
+                    alt={alt}
+                    caption={caption}
+                />
+            }
+        </aside>
+    );
+}
+export default Aside;
+```
