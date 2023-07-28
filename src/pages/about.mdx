@@ -3,8 +3,28 @@ title: (More) About Me
 ---
 
 import Layout from "../components/Layout"
+import Details from "../components/details"
+import LessProfessional from "../components/lessProfessional"
 
 <Layout>
-<h1>{props.pageContext.frontmatter.title}</h1>
-    I wonder if this will work.
+# {props.pageContext.frontmatter.title}
+
+## Professional bio
+
+I transitioned into frontend web development during the pandemic--from a background mostly in higher ed, nonprofit marketing/fundraising, and content strategy. As a developer, I'm still passionate about content strategy, thoughtfully-built websites and CMSes, and accessibility.
+
+<Details summary="Skills">
+My boring-ass etc    
+</Details>
+
+<Details summary="Resources I like">
+more stuff here
+</Details>
+
+## Less-professional bio
+
+<LessProfessional>
+Now there's something here.
+</LessProfessional>
+
 </Layout>

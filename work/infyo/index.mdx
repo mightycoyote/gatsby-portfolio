@@ -11,15 +11,17 @@ image_alt: "Screen grab of my yoyo page"
 ---
 ## Intro
 
-This was the first project I built after completing a basic frontend web developer curriculum online. I was keen to build an original site of my own, as well as try out Tailwind and a JavaScript framework. There are things I'd do differently now, but the site still works.
+This was the first project I built after completing a beginning frontend web developer curriculum online. I was keen to build an original site of my own, as well as try out Tailwind and a JavaScript framework. There are things I'd do differently now, but the site still works.
 
 ## React
 
-I'd done a React basics course, and had the official documentation close to hand, but didn't understand it nearly as well as I do now (I'm working my way through [Josh Comeau's "The Joy of React"](https://www.joyofreact.com/), and I _highly_ recommend it). Overkill for such a simple site? Maybe. On the other hand, at the time at least, the tooling for `create-react-app` worked pretty well and I was able to find answers to questions like how to get Tailwind installed and how to build and deploy to Github Pages. Since then, I've built several one-off practice projects using what should have been simpler tools, but sometimes had problems configuring them from outdated, patchy, or nonexistent documentation.
+I'd done a React basics course, and had the official documentation close to hand, but didn't understand it nearly as well as I do now (I'm working my way through [Josh Comeau's "The Joy of React"](https://www.joyofreact.com/), and I recommend it.) Overkill for such a simple site? Maybe. On the other hand, at the time at least, the tooling for `create-react-app` worked pretty well and I was able to find answers to questions like how to get Tailwind installed and how to build and deploy to Github Pages. Since then, I've built several one-off practice projects using what should have been simpler tools, but sometimes had problems configuring them from outdated, patchy, or nonexistent documentation.
 
 Also, I'm not really sorry I dipped my toes in React that early.
 
-One of the main things I'd do differently here is that I'd break up the `index.js` page one way or another, even if I kept the public site itself to one page. Currently it's mostly all in one giant document, aside from the few obviously reusable components like the navigation and image layouts. This is partly an artifact of writing and designing the site at the same time--crafting styles to suit each content section I had and then looking for ways to reuse them later--while not realizing how long and unwieldy it was going to get. The simplest solution would be to keep it as-is but split it into separate `js` files for each content section, just to make it easier to manage. If I were building it new _today_, I would probably write the content in a series of `mdx` files. But, that's the difference between just-finished-my-fewd-courses me and current me.
+One of the main things I'd change about INFyO (for example, if I decided to expand it) is that I'd break up the `index.js` page one way or another, even if I kept the public site itself to one page. Currently it's mostly all in one giant document, aside from a few obviously reusable components like the navigation, aside boxes and image layouts. This is partly an artifact of writing and designing the site at the same time--crafting styles to suit each content section I had and then looking for ways to reuse them later--while not realizing how long and unwieldy it was going to get. The simplest solution would be to keep it as-is but split it into separate `js` files for each content section, just to make it easier to manage. 
+
+If I had it to do over again today, I would probably write the content in a series of `mdx` files. But, that's the difference between just-finished-my-fewd-courses me and current me.
 
 There are a few characteristically React components here, though. For example, there was one section where I wanted the aside box to `float` right at larger screen sizes (so that the main content would wrap around it), but stop floating and go to the end of the section at smaller screen sizes. To accomplish this, the aside box is shown in one position and hidden in another, depending on the screen size. 
 
@@ -91,7 +93,7 @@ function App() {
 
 ## Tailwind and CSS
 
-I enjoyed learning and using Tailwind for this project... but I've never used it again. Styling a page does go pretty quickly once you've filled your head with all of the Tailwind class names, but I don't find writing more conventional CSS with Sass, or at least the native custom properties, that burdensome. And all things being equal, I have enough terms for things to memorize already. 
+I remember that I enjoyed learning and using Tailwind for this project... but I've never used it again. Styling a page in this way does go pretty quickly once you've filled your head with all of the Tailwind class names, but I don't find writing more conventional CSS with Sass, or at least the native custom properties, that burdensome. And all things being equal, I have enough terms for things to memorize already. 
 
 An interesting CSS problem I had on INFyO was creating the optional "point" styles:
 

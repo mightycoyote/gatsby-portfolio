@@ -58,6 +58,7 @@ const BaseStyles = styled.div`
   --blue-text: var(--secondary-1-2);
   --teal-text: var(--primary-0);
   --display-font: "Calistoga", serif;
+  --text-font: "Montserrat", sans-serif;
   --bg-dark: #0a0a0a;
   --text-light: #ececec;
 
@@ -67,11 +68,18 @@ const BaseStyles = styled.div`
   --med-breakpoint: 40rem;
   --med-breakpoint-2: 45rem;
 
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--text-font);
   font-size: clamp(0.875rem, 2.5vw, 1rem);
   background-color: var(--bg-dark);
   color: var(--text-light);
   overflow: auto; 
+
+  h1 {
+    color: var(--blue-text);
+    font-family: var(--display-font);
+    font-size: clamp(2rem, 7vw, 3rem);
+    margin: 2rem 0;
+  }
 
   h2 {
     font-size: clamp(1.5rem, 4vw, 2rem);
@@ -98,6 +106,7 @@ const BaseStyles = styled.div`
   }
 
   .spaced-header {
+    font-family: var(--text-font);
     font-size: 0.875rem;
     text-transform: uppercase;
     letter-spacing: 6px;
@@ -132,6 +141,10 @@ const Wrapper = styled.div`
 
   main {
     min-width: 0;
+    
+    p {
+      margin: 1rem 0;
+    }
   }
 `;
 
@@ -201,7 +214,7 @@ const Layout = ({ children }) => {
           <main> {children} </main>
           <Footer>
             <div>
-              <p>©2023 Sarah Wilkes</p>
+              <p>©2023 <Link to ="/about">Sarah Wilkes</Link></p>
             </div>
             <div className="right-div">
               <div className="gatsby-logo">

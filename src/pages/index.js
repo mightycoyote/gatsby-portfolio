@@ -23,7 +23,7 @@ const Hero = styled.div`
     color: var(--blue-text);
   }
 
-  h1 {
+  .spaced-header {
     color: var(--secondary-1-1);
   }
 

@@ -30,17 +30,7 @@ const TopSectionStyles = styled.div`
   }
 `;
 
-const ProjectDetailStyles = styled.article`
-  h1 {
-    color: var(--blue-text);
-    font-family: "Calistoga", serif;
-    font-size: clamp(2rem, 7vw, 3rem);
-    margin: 2rem 0;
-  }
-  p {
-    margin: 1rem 0;
-  }
-`;
+const ProjectDetailStyles = styled.article``;
 
 const ProjectDetail = ({ data, children }) => {
   const image = getImage(data.mdx.frontmatter.image);
