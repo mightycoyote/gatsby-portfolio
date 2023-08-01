@@ -45,11 +45,7 @@ const IndexPage = () => {
           <h1 className="spaced-header">About me</h1>
           <p className="name">Sarah Wilkes</p>
           <p>
-            I'm a web developer who knows a lot about bushwick paleo flexitarian
-            art party neutra. Mumblecore chia next level jianbing, banh mi
-            microdosing JOMO activated charcoal gentrify. Quinoa big mood
-            taiyaki kogi cray health goth salvia taxidermy cold-pressed iceland
-            intelligentsia whatever biodiesel chia.
+            Hi! I'm a frontend web developer and content strategy enthusiast. I <em>love</em> problem-solving, Google Fu, JavaScript, and yes, even CSS.
           </p>
           <p className="more">
             <Link to ="/about">

@@ -105,6 +105,14 @@ const BaseStyles = styled.div`
     }
   }
 
+  ul {
+    list-style-type: square;
+  }
+
+  li::marker {
+    color: var(--primary-2);
+  }
+
   .spaced-header {
     font-family: var(--text-font);
     font-size: 0.875rem;
