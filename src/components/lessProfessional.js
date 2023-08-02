@@ -8,6 +8,7 @@ const LpStyles = styled.div`
 
     @media (min-width: 40rem) {
         flex-direction: row;
+        gap: 2rem;
         > * {
             flex-basis: 100%;
         }

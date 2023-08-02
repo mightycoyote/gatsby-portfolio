@@ -17,7 +17,7 @@ const Hero = styled.div`
   .name {
     margin-top: clamp(1rem, 4vw, 2rem);
     margin-bottom: 1rem;
-    font-family: "Calistoga", serif;
+    font-family: var(--display-font);
     font-weight: 400;
     font-size: clamp(2rem, 6vw, 4rem);
     color: var(--blue-text);
@@ -45,7 +45,7 @@ const IndexPage = () => {
           <h1 className="spaced-header">About me</h1>
           <p className="name">Sarah Wilkes</p>
           <p>
-            Hi! I'm a frontend web developer and content strategy enthusiast. I <em>love</em> problem-solving, Google Fu, JavaScript, and yes, even CSS.
+            Hi! I'm a frontend web developer and content strategy enthusiast. I enjoy problem-solving, Google Fu, JavaScript, and yes, even CSS.
           </p>
           <p className="more">
             <Link to ="/about">

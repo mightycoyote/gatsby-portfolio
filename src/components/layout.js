@@ -79,6 +79,7 @@ const BaseStyles = styled.div`
     font-family: var(--display-font);
     font-size: clamp(2rem, 7vw, 3rem);
     margin: 2rem 0;
+    font-weight: 400;
   }
 
   h2 {

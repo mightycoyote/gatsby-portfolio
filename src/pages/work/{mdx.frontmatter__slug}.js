@@ -50,6 +50,14 @@ const ProjectDetail = ({ data, children }) => {
               <span className="span">Built with:</span>
               <br /> {data.mdx.frontmatter.built_with}
             </p>
+            {data.mdx.frontmatter.challengeURL && (
+              <p>
+                <a className="more" href={data.mdx.frontmatter.challengeURL}>
+                  view challenge spec{" "}
+                  <span className="material-icons"> arrow_outward </span>
+                </a>
+              </p>
+            )}
             <p>
               <a className="more" href={data.mdx.frontmatter.liveURL}>
                 visit live site{" "}
@@ -77,6 +85,7 @@ export const query = graphql`
         image_alt
         title
         liveURL
+        challengeURL
         abstract
         built_with
       }
