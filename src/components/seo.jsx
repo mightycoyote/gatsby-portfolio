@@ -6,18 +6,25 @@ export const Seo = ({ title, description, pathname, children }) => {
     title: defaultTitle,
     description: defaultDescription,
     siteUrl,
+    image,
   } = useSiteMetadata();
 
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
+    image: `${siteUrl}${image}`,
     url: `${siteUrl}${pathname || ``}`,
   };
 
   return (
     <>
+      <html lang="en" />
       <title>{seo.title}</title>
       <meta name="description" content={seo.description} />
+      <meta name="og:title" content={seo.title} />
+      <meta name="og:url" content={seo.url} />
+      <meta name="og:description" content={seo.description} />
+      <meta name="og:image" content={seo.image} />
       {children}
     </>
   );
