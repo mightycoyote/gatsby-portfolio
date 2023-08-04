@@ -62,7 +62,6 @@ const BaseStyles = styled.div`
   --bg-dark: #0a0a0a;
   --text-light: #ececec;
 
-
   // breakpoints in use: sadly, these don't work as variables without SASS
   --sm-breakpoint: 30rem;
   --med-breakpoint: 40rem;
@@ -72,7 +71,7 @@ const BaseStyles = styled.div`
   font-size: clamp(0.875rem, 2.5vw, 1rem);
   background-color: var(--bg-dark);
   color: var(--text-light);
-  overflow: auto; 
+  overflow: auto;
 
   h1 {
     color: var(--blue-text);
@@ -147,14 +146,6 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-rows: min-content auto min-content;
   height: 100vh;
-
-  main {
-    min-width: 0;
-    
-    p {
-      margin: 1rem 0;
-    }
-  }
 `;
 
 const Header = styled.header`
@@ -167,6 +158,13 @@ const Header = styled.header`
   @media (min-width: 40rem) {
     flex-direction: row;
     justify-content: space-between;
+  }
+`;
+
+const Main = styled.main`
+  min-width: 0;
+  p {
+    margin-bottom: 1rem;
   }
 `;
 
@@ -190,7 +188,7 @@ const Footer = styled.footer`
   .right-div {
     display: flex;
     flex-direction: row;
-    gap: .5rem;
+    gap: 0.5rem;
   }
   .gatsby-logo {
     width: 20px;
@@ -205,7 +203,9 @@ const Layout = ({ children }) => {
       <BaseStyles>
         <Wrapper>
           <Header>
-            <p><Link to="/">Home</Link></p>
+            <p>
+              <Link to="/">Home</Link>
+            </p>
             <Nav>
               <ul>
                 <li>
@@ -220,10 +220,12 @@ const Layout = ({ children }) => {
               </ul>
             </Nav>
           </Header>
-          <main> {children} </main>
+          <Main> {children} </Main>
           <Footer>
             <div>
-              <p>©2023 <Link to ="/about">Sarah Wilkes</Link></p>
+              <p>
+                ©2023 <Link to="/about">Sarah Wilkes</Link>
+              </p>
             </div>
             <div className="right-div">
               <div className="gatsby-logo">

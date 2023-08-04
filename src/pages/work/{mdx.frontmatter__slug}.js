@@ -2,7 +2,7 @@ import * as React from "react";
 import styled from "styled-components";
 import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import Layout from "../../components/Layout";
+import Layout from "../../components/layout";
 import { Seo } from "../../components/seo";
 
 const StyledImage = styled(GatsbyImage)`

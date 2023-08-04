@@ -7,7 +7,13 @@ const FeaturedItemStyles = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 1rem 0;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  background-color: rgba(15, 31, 88, .3);
+  border-radius: 3px;
+  &:hover {
+    outline: var(--green-text) 2px solid;
+  }
 
   @media (min-width: 45rem) {
     flex-direction: row;
