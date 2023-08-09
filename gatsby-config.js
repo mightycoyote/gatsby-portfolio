@@ -5,8 +5,7 @@ module.exports = {
   siteMetadata: {
     title: `Sarah Wilkes Dev`,
     description: `Sarah Wilkes' frontend web developer portfolio`,
-    // need to update when I have a domain name!
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://www.sarahwilkesdev.com`,
     image: `/Sarah_octocat_social.jpg`,
   },
   plugins: [

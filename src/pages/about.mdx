@@ -3,6 +3,7 @@ title: (More) About Me
 ---
 
 import Layout from "../components/layout"
+import { Seo } from "../components/seo";
 import Details from "../components/details"
 import LessProfessional from "../components/lessProfessional"
 
@@ -14,7 +15,9 @@ import LessProfessional from "../components/lessProfessional"
 I transitioned into frontend web development during the pandemic, from a background mostly in higher ed, nonprofit marketing/fundraising, and content strategy. As a developer, I'm still passionate about content-first design, thoughtfully-built websites and CMSes, and accessibility.
 
 <Details summary="Skills">
-In addition to HTML, CSS, and JavaScript, I have worked with: SCSS, Tailwind, Bootstrap, CoreUI, CSS Modules, styled-components, React, Vite, Gatsby, WordPress, Drupal, PHP, MySQL, Docker, and Figma (and used more project tracking and business apps than I can count). I'm good at professional communication, solving complex problems, and keeping track of multiple competing tasks.
+HTML, CSS, JavaScript, SCSS, Tailwind, Bootstrap, CoreUI, CSS Modules, styled-components, React, Vite, Gatsby, WordPress, Drupal, PHP, MySQL, Docker, and Figma (and I've used more project tracking and business apps than I can count). 
+
+I'm especially good at professional communication, solving complex problems, and keeping track of multiple competing tasks.
 </Details>
 
 <Details summary="Some resources I like">
@@ -26,8 +29,8 @@ In addition to HTML, CSS, and JavaScript, I have worked with: SCSS, Tailwind, Bo
 - [Logo Ipsum](https://logoipsum.com/)
 - [A Complete Guide to Flexbox | CSS-Tricks](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 - [A Complete Guide to Grid | CSS-Tricks](https://css-tricks.com/snippets/css/complete-guide-grid/)
-- [Lofi Girl](https://www.youtube.com/@LofiGirl)
-- [Chill Music Lab](https://www.youtube.com/@MusicLabChill)
+- [Lofi Girl](https://www.youtube.com/@LofiGirl) (background music for coding)
+- [Chill Music Lab](https://www.youtube.com/@MusicLabChill) (background music for coding)
 </Details>
 
 ## Less-professional bio
@@ -43,3 +46,5 @@ I live in Virginia, US, with a spouse, kid, and two cats, and I:
 </LessProfessional>
 
 </Layout>
+
+export const Head = () => <Seo title="(More) About Me" />;

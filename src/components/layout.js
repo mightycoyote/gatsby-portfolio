@@ -142,7 +142,7 @@ const Wrapper = styled.div`
   margin: 0 auto;
   padding: 1rem clamp(1rem, 6vw, 5rem);
   min-width: 275px;
-  max-width: 1200px;
+  max-width: 1050px;
   display: grid;
   grid-template-rows: min-content auto min-content;
   height: 100vh;

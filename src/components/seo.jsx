@@ -10,7 +10,7 @@ export const Seo = ({ title, description, pathname, children }) => {
   } = useSiteMetadata();
 
   const seo = {
-    title: title || defaultTitle,
+    title: `${title} | Sarah Wilkes Dev` || defaultTitle,
     description: description || defaultDescription,
     image: `${siteUrl}${image}`,
     url: `${siteUrl}${pathname || ``}`,
