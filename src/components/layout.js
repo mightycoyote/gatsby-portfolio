@@ -62,11 +62,6 @@ const BaseStyles = styled.div`
   --bg-dark: #0a0a0a;
   --text-light: #ececec;
 
-  // breakpoints in use: sadly, these don't work as variables without SASS
-  --sm-breakpoint: 30rem;
-  --med-breakpoint: 40rem;
-  --med-breakpoint-2: 45rem;
-
   font-family: var(--text-font);
   font-size: clamp(0.875rem, 2.5vw, 1rem);
   background-color: var(--bg-dark);

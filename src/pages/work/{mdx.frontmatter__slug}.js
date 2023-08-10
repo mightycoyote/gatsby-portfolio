@@ -5,14 +5,6 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "../../components/layout";
 import { Seo } from "../../components/seo";
 
-const StyledImage = styled(GatsbyImage)`
-  width: 100%;
-
-  @media (min-width: 30rem) {
-    width: 50%;
-  }
-`;
-
 const TopSectionStyles = styled.div`
   display: flex;
   flex-direction: column;
@@ -24,15 +16,17 @@ const TopSectionStyles = styled.div`
     color: var(--secondary-1-1);
   }
 
-  @media (min-width: 30rem) {
+  @media (min-width: 35rem) {
     flex-direction: row;
     justify-content: space-between;
+
+    > * {
+      flex-basis: 100%;
+    }
   }
 `;
 
-const ProjectDetailStyles = styled.article`
-
-`;
+const ProjectDetailStyles = styled.article``;
 
 const ProjectDetail = ({ data, children }) => {
   const image = getImage(data.mdx.frontmatter.image);
@@ -42,7 +36,7 @@ const ProjectDetail = ({ data, children }) => {
       <ProjectDetailStyles>
         <h1>{data.mdx.frontmatter.title}</h1>
         <TopSectionStyles>
-          <div>
+          <div className="left">
             <p>
               <span className="span">Abstract:</span>
               <br />
@@ -67,7 +61,12 @@ const ProjectDetail = ({ data, children }) => {
               </a>
             </p>
           </div>
-          <StyledImage image={image} alt={data.mdx.frontmatter.image_alt} />
+          <GatsbyImage
+            image={image}
+            alt={data.mdx.frontmatter.image_alt}
+            objectFit="contain"
+            objectPosition="left top"
+          />
         </TopSectionStyles>
         {children}
       </ProjectDetailStyles>

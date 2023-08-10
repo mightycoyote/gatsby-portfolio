@@ -9,6 +9,7 @@ module.exports = {
     image: `/Sarah_octocat_social.jpg`,
   },
   plugins: [
+    "gatsby-plugin-netlify",
     "gatsby-plugin-image",
     "gatsby-plugin-sitemap",
     {
@@ -25,7 +26,8 @@ module.exports = {
           {
             resolve: "gatsby-remark-images",
             options: {
-              maxWidth: 1040,
+              maxWidth: 1050,
+              wrapperStyle: "margin-bottom: 1rem",
             }
           }
         ]
