@@ -82,9 +82,9 @@ const BaseStyles = styled.div`
   }
 
   h2 {
-    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-size: clamp(1.5rem, 5vw, 2rem);
     color: var(--green-text);
-    margin: 2rem 0 1.5rem;
+    margin: 2.5rem 0 1.5rem;
     font-weight: 400;
   }
 
@@ -163,7 +163,7 @@ const Header = styled.header`
 
 const Main = styled.main`
   min-width: 0;
-  p {
+  p, pre {
     margin-bottom: 1rem;
   }
 `;
@@ -209,7 +209,7 @@ const Layout = ({ children }) => {
             <Nav>
               <ul>
                 <li>
-                  <Link to="/#about">About</Link>
+                  <Link to="/about">About</Link>
                 </li>
                 <li>
                   <Link to="/#work">Work</Link>
@@ -224,7 +224,7 @@ const Layout = ({ children }) => {
           <Footer>
             <div>
               <p>
-                ©2023 <Link to="/about">Sarah Wilkes</Link>
+                ©2023 <Link to="/#contact">Sarah Wilkes</Link>
               </p>
             </div>
             <div className="right-div">

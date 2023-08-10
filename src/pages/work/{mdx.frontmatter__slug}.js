@@ -30,7 +30,9 @@ const TopSectionStyles = styled.div`
   }
 `;
 
-const ProjectDetailStyles = styled.article``;
+const ProjectDetailStyles = styled.article`
+
+`;
 
 const ProjectDetail = ({ data, children }) => {
   const image = getImage(data.mdx.frontmatter.image);

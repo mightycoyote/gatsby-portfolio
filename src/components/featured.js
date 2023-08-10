@@ -3,9 +3,7 @@ import styled from "styled-components";
 import { useStaticQuery, graphql } from "gatsby";
 import FeaturedItem from "./featuredItem";
 
-const FeaturedStyles = styled.div`
-  padding: 2rem 0;
-`;
+const FeaturedStyles = styled.div``;
 
 const Featured = () => {
   const data = useStaticQuery(graphql`

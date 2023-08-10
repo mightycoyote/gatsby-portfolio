@@ -3,14 +3,14 @@ import styled from "styled-components";
 import { StaticImage } from "gatsby-plugin-image";
 
 const ContactStyles = styled.div`
-  padding: 2rem 0;
+  padding: clamp(1rem, 3vw, 1.5rem) 0;
 `;
 
 const FlexDiv = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  @media (min-width: 30rem) {
+  @media (min-width: 40rem) {
     flex-direction: row;
     > * {
       flex-basis: 100%;

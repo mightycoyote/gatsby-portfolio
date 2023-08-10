@@ -95,16 +95,7 @@ function App() {
 
 I remember that I enjoyed learning and using Tailwind for this project... but I've never used it again. Styling a page in this way does go pretty quickly once you've filled your head with all of the Tailwind class names, but I don't find writing more conventional CSS with Sass, or at least the native custom properties, that burdensome. And all things being equal, I have enough terms for things to memorize already. 
 
-An interesting CSS problem I had on INFyO was creating the optional "point" styles:
-
-![Screenshot of component indented with a rightward-pointing arrow appearing before the written content](./point-screenshot.png)
-
-Of course, the arrow is added with a pseudo-element when the paragraph contains the class name "point."
-
-```jsx
-<p className="point">What I <em>don't</em> recommend is trying to learn the basics on a responsive aluminum yoyo. Some people do, but... ouch.</p>
-```
-It needed a lot of miscellaneous CSS styling to get it to display the way I wanted. I also decided the arrow should simply disappear on mobile, where there isn't much room for it.
+An interesting CSS problem I had on INFyO was creating the optional "point" styles--in my design, these are paragraphs with extra indentation and marked with an arrow. Of course, the arrow is added with a pseudo-element when the paragraph includes the class name "point." But, it needed a lot of miscellaneous CSS styling to get it to display the way I wanted. I also decided the arrow should simply disappear on mobile, where there isn't much room for it.
 
 ```CSS
 @media (min-width: 768px) {
