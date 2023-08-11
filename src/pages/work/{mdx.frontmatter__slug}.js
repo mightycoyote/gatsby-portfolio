@@ -26,7 +26,12 @@ const TopSectionStyles = styled.div`
   }
 `;
 
-const ProjectDetailStyles = styled.article``;
+const ProjectDetailStyles = styled.article`
+  h3 {
+    padding: 0;
+    margin: 1.5rem 0 1rem;
+  }
+`;
 
 const ProjectDetail = ({ data, children }) => {
   const image = getImage(data.mdx.frontmatter.image);
