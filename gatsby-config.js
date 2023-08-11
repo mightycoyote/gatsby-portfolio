@@ -15,11 +15,11 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        name: `GatsbyJS`,
-        short_name: `GatsbyJS`,
+        name: `Sarah Wilkes Dev`,
+        short_name: `Sarah Wilkes Dev`,
         start_url: `/`,
-        background_color: `#f7f0eb`,
-        theme_color: `#a2466c`,
+        background_color: `#0a0a0a`,
+        theme_color: `rgb(82, 99, 159)`,
         display: `standalone`,
         icon: "src/images/icon.png",
       },
