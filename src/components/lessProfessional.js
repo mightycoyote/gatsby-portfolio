@@ -20,7 +20,7 @@ const LessProfessional = ({ children }) => {
         <LpStyles>
             <div>{children}</div>
             <div>
-                <StaticImage src="../images/marshmallow-cat.png" alt="a cat" />
+                <StaticImage src="../images/marshmallow-cat.png" alt="a white cat lounging, almost asleep" />
             </div>
         </LpStyles>
     )
