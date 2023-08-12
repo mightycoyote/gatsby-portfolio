@@ -4,49 +4,18 @@ slug: "github-user-search"
 date: "2022-10-17"
 liveURL: "https://mightycoyote.github.io/github-user-search-app/"
 challengeURL: "https://www.frontendmentor.io/challenges/github-user-search-app-Q09YOgaH6"
-abstract: "A FrontendMentor.io build that looks up GitHub users via the API and includes light and dark modes. Mine runs on vanilla JS and Vite."
-built_with: "Mobile-first workflow, semantic HTML, Flexbox, CSS Grid, JavaScript, Vite, Octokit API, localStorage, Josh W. Comeau's Shadow Palette Generator"
+abstract: "A FrontendMentor.io build that looks up GitHub users via the API, and includes light and dark modes. Mine runs on vanilla JS and Vite."
+built_with: "Mobile-first workflow, semantic HTML, Flexbox, CSS Grid, JavaScript, Vite, Octokit API, localStorage, CSS Shadow Palette Generator"
 featured: true
 image: "./github-user-search.png"
 image_alt: "Screen grab of GitHub user search app"
 ---
-## CSS
-
-The comps for this project have layouts on desktop and mobile that differ from each other enough to pose a challenge in how to handle them. But, I did arrive at a graceful solution: `grid-template-areas`. (I had to change the number of columns, too):
-
-```css
-/* on mobile */
-.response-container {
-  margin-top: 1rem;
-  padding: clamp(32px, 2vw, 48px);
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas:
-    "avatar intro intro"
-    "bio bio bio"
-    "stats-box stats-box stats-box"
-    "info-columns info-columns info-columns";
-  gap: clamp(20px, 2.5vw, 30px);
-}
-
-/* at tablet size and above */
-@media (min-width: 680px) {
-  .response-container {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-areas:
-      "avatar intro intro intro"
-      "avatar bio bio bio"
-      "avatar stats-box stats-box stats-box"
-      "avatar info-columns info-columns info-columns";
-  }
-}
-```
 
 ## JavaScript
 
 ### Octokit
 
-It turned out that the GitHub API has its own library called Octokit. I ended up using [octokit/rest.js](https://octokit.github.io/rest.js/v18#usage), because I found a note somewhere suggesting this version would work best with Vite. However, Vite still doesn't (or didn't) like it. I eventually solved the issue by replacing `node-fetch` with `isomorphic-fetch` as suggested in this [StackOverflow answer](https://stackoverflow.com/questions/73095592/octokit-js-not-working-with-vite-module-externalized-and-cannot-be-accessed-in/73095593#73095593) and some others. After that, retrieving public info from GitHub went just fine:
+It turned out that the GitHub API has its own library called Octokit. I ended up using [octokit/rest.js](https://octokit.github.io/rest.js/v18#usage), because I found a note somewhere suggesting this version would work best with Vite. However, Vite still didn't like it. I eventually solved the issue by replacing `node-fetch` with `isomorphic-fetch` as suggested in this [StackOverflow answer](https://stackoverflow.com/questions/73095592/octokit-js-not-working-with-vite-module-externalized-and-cannot-be-accessed-in/73095593#73095593) (and some others). After that, retrieving public info from GitHub went just fine:
 
 ```JS
 import { Octokit } from "@octokit/rest";
@@ -125,6 +94,7 @@ function setDarkPref(darkMode) {
     } 
 }
 ```
+
 
 ## Resources
 
