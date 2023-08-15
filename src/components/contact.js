@@ -104,7 +104,7 @@ const Contact = () => {
                 src="../images/logo-purple.svg"
                 alt="Mastodon logo"
               />
-              <a href="https://nerdculture.de/@mightycoyote" id="mastodon">
+              <a href="https://nerdculture.de/@mightycoyote" id="mastodon" rel="me">
                 Mastodon
               </a>
               <StaticImage

@@ -176,7 +176,7 @@ const Footer = styled.footer`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 3rem 0 1rem;
+  padding: 4rem 0 1rem;
   @media (min-width: 30rem) {
     flex-direction: row;
   }
