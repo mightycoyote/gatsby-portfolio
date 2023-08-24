@@ -85,6 +85,7 @@ const Contact = () => {
       <h2 id="contact">Contact</h2>
       <FlexDiv>
         <Form name="contact" method="POST" data-netlify="true" action="/success/">
+        <input type="hidden" name="form-name" value="contact" />
           <p>Have a project in mind? Still don't understand the difference between 6061 and 7075 aluminum in a <a href="https://infyo.me">yoyo</a>? Need to hear all about my cats? Get in touch!</p>
           <div>
             <label htmlFor="name">Name</label>
