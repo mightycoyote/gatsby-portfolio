@@ -45,7 +45,7 @@ const IndexPage = () => {
           <h1 className="spaced-header">About me</h1>
           <p className="name">Sarah Wilkes</p>
           <p>
-            Hi! I'm a frontend web developer and content strategy enthusiast. I enjoy problem-solving, Google Fu, JavaScript, and yes, even CSS.
+            Hi! I'm a frontend web developer and content strategy enthusiast. I enjoy figuring out new systems, problem-solving, JavaScript, and yes, even CSS.
           </p>
           <p className="more">
             <Link to ="/about">
