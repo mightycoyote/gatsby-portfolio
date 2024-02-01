@@ -92,5 +92,22 @@ module.exports = {
         },
       },
     },
+    {
+      // based on https://neil-clarke.com/block-the-bots-that-feed-ai-models-by-scraping-your-website/
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        policy: [
+          {userAgent: 'CCBot', disallow: '/'},
+          {userAgent: 'ChatGPT-User', disallow: '/'},
+          {userAgent: 'GPTBot', disallow: '/'},
+          {userAgent: 'Google-Extended', disallow: '/'},
+          {userAgent: 'anthropic-ai', disallow: '/'},
+          {userAgent: 'Omgilibot', disallow: '/'},
+          {userAgent: 'Omgili', disallow: '/'},
+          {userAgent: 'FacebookBot', disallow: '/'},
+          {userAgent: 'Bytespider', disallow: '/'},
+        ]
+      }
+    }
   ],
 };
