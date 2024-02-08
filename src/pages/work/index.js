@@ -29,7 +29,7 @@ const WorkIndex = ({ data }) => {
 export const query = graphql`
   query {
     allMdx(
-      filter: { internal: { contentFilePath: { regex: "/lio/work//" } } }
+      filter: { internal: { contentFilePath: { regex: "\/work\//" } } }
       sort: { frontmatter: { date: DESC } }
     ) {
       nodes {
