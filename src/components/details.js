@@ -9,6 +9,7 @@ const DetailStyles = styled.details`
   }
 `;
 
+// this component uses and styles the standard <details> html element, is used on about page
 const Details = ({ summary, children }) => {
   return (
     <DetailStyles>

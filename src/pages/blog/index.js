@@ -9,10 +9,10 @@ const ItemStyles = styled.li`
   margin: 1rem 0;
 `;
 
-const WorkIndex = ({ data }) => {
+const BlogIndex = ({ data }) => {
   return (
     <Layout>
-      <h1>Work Archive</h1>
+      <h1>Blog</h1>
       <ul>
         {data.allMdx.nodes.map((node) => (
           <ItemStyles key={node.id}>
@@ -29,7 +29,7 @@ const WorkIndex = ({ data }) => {
 export const query = graphql`
   query {
     allMdx(
-      filter: { internal: { contentFilePath: { regex: "/lio\/work\//" } } }
+      filter: { internal: { contentFilePath: { regex: "/lio\/blog\//" } } }
       sort: { frontmatter: { date: DESC } }
     ) {
       nodes {
@@ -45,6 +45,6 @@ export const query = graphql`
   }
 `;
 
-export default WorkIndex;
+export default BlogIndex;
 
-export const Head = () => <Seo title="Work Archive" />;
+export const Head = () => <Seo title="Blog" />;
