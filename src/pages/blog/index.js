@@ -29,7 +29,7 @@ const BlogIndex = ({ data }) => {
 export const query = graphql`
   query {
     allMdx(
-      filter: { internal: { contentFilePath: { regex: "/lio\/blog\//" } } }
+      filter: { internal: { contentFilePath: { regex: "/lio/blog//" } } }
       sort: { frontmatter: { date: DESC } }
     ) {
       nodes {
